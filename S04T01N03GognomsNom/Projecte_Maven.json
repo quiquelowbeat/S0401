@@ -1,0 +1,1 @@
+{"id":"1fc811fb-09ae-4668-9031-0dcd569ef2c2","name":"Projecte Maven","values":[{"key":"servidor","value":"http://localhost","enabled":true,"type":"default"},{"key":"port","value":"9000","enabled":true}]}
