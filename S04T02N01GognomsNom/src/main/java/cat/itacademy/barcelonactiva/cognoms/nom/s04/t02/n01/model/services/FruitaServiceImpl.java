@@ -33,7 +33,7 @@ public class FruitaServiceImpl implements FruitaService{
             fruitaUpdated.setNom(fruita.getNom());
             fruitaUpdated.setQuantitatQuilos(fruita.getQuantitatQuilos());
             this.fruitaRepository.save(fruitaUpdated);
-        }
+        } 
         return fruitaEntityOptional.isPresent();
     }
 
@@ -48,7 +48,7 @@ public class FruitaServiceImpl implements FruitaService{
         FruitaEntity fruita = null;
         if(fruitaEntityOptional.isPresent()){
             fruita = fruitaEntityOptional.get();
-        }
+        } 
         return fruita;
     }
 

@@ -47,20 +47,22 @@ public class FruitaController {
 
     @GetMapping("/getOne/{id}")
     public ResponseEntity<FruitaEntity> getOne(@PathVariable("id") int id){
-        if(fruitaService.getFruitaById(id) == null){
+        FruitaEntity fruita = fruitaService.getFruitaById(id);
+        if(fruita == null){
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
         } else {
-            return new ResponseEntity<>(fruitaService.getFruitaById(id), HttpStatus.OK);
+            return new ResponseEntity<>(fruita, HttpStatus.OK);
         }
 
     }
 
     @GetMapping("/getAll")
     public ResponseEntity<List<FruitaEntity>> getAll(){
-        if(fruitaService.getAllFruita().isEmpty()){
+        List<FruitaEntity> fruitaList = fruitaService.getAllFruita();
+        if(fruitaList.isEmpty()){
             return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
         } else {
-            return new ResponseEntity<>(fruitaService.getAllFruita(), HttpStatus.OK);
+            return new ResponseEntity<>(fruitaList, HttpStatus.OK);
         }
     }
 
