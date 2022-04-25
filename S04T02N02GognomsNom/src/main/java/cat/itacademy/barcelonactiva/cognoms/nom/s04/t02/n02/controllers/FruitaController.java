@@ -1,7 +1,7 @@
-package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.controllers;
+package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n02.controllers;
 
-import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.domain.FruitaEntity;
-import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.services.FruitaServiceImpl;
+import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n02.model.domain.FruitaEntity;
+import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n02.model.services.FruitaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:8082")
+
 public class FruitaController {
 
     @Autowired
-    private FruitaServiceImpl fruitaService;
+    private FruitaService fruitaService;
 
     @PostMapping("/add")
     public ResponseEntity<HttpStatus> add(@RequestBody FruitaEntity fruita){
@@ -66,5 +67,4 @@ public class FruitaController {
             return new ResponseEntity<>(fruitaList, HttpStatus.OK);
         }
     }
-
 }

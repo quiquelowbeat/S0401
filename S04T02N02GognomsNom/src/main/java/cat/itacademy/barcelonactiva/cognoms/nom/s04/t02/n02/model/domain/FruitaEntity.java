@@ -1,4 +1,4 @@
-package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.domain;
+package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n02.model.domain;
 
 import javax.persistence.*;
 
@@ -7,10 +7,10 @@ import javax.persistence.*;
 public class FruitaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "nom", length = 50)
+    @Column(name = "nom")
     private String nom;
 
     @Column(name = "quantitat_quilos")
