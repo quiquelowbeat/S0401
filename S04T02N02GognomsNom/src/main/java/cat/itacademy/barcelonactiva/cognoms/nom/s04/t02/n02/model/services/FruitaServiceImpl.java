@@ -17,7 +17,7 @@ public class FruitaServiceImpl implements FruitaService{
     @Override
     public void addFruita(FruitaEntity fruita) {
         this.fruitaRepository.save(fruita);
-        if(fruita.getNom() == null){
+        if(fruita.getNom().isEmpty() || fruita.getQuantitatQuilos() == 0){
             this.fruitaRepository.deleteById(fruita.getId());
             throw new RuntimeException();
         }
