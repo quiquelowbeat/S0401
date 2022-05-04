@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 
+    // {{servidor}}:{{port}}/HelloWorld/?nom=Joan
     @GetMapping("/HelloWorld")
     public String saluda(@RequestParam(value = "nom", required = false, defaultValue = "UNKNOWKN") String nom){
         return "Hola " + nom + ". Estàs executant un projecte Maven.";
     }
 
+    // {{servidor}}:{{port}}/HelloWorld/Joan
     @GetMapping({"/HelloWorld2", "/HelloWorld2/{nom}"})
     public String saluda2(@PathVariable(required = false) String nom){
         return "Hola " + nom + ". Estàs executant un projecte Maven.";
